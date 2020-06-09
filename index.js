@@ -38,15 +38,15 @@ Hint: while these calculations can be done in one line, it might be helpful to c
 (5) Create a variable called monthlyRate and set it equal to numerator/denominator
 */
 
-// let n1 = Math.pow((1 + monthlyInterestRate),periods);
-// let n2 = n1 * monthlyInterestRate;
-// let numerator = n1 * n2;
-// let denominator = n1 - 1;
-// let monthlyRate = numerator/denominator;
-// console.log(monthlyRate.toFixed(2)); //answers 0.02
+let n1 = Math.pow((1 + monthlyInterestRate),periods);
+// let n2 = n1 * monthlyInterestRate; // remove step 3 above
+let numerator = n1 * monthlyInterestRate; // use monthlyInterestRate instead of n2 in step 3 above
+let denominator = n1 - 1;
+let monthlyRate = principal * (numerator/denominator); // add principal * (numerator/denominator) to step 5 above
+console.log(monthlyRate.toFixed(2)); //answers 0.02 -- resolves to 1073.64 with above modifications to instructions. 
 
-let monthlyRate = (principal * monthlyInterestRate) / (1 - (Math.pow((1 + monthlyInterestRate),periods * -1)));
-console.log(monthlyRate.toFixed(2));
+// let monthlyRate = (principal * monthlyInterestRate) / (1 - (Math.pow((1 + monthlyInterestRate),periods * -1)));
+// console.log(monthlyRate.toFixed(2));
 
 /* Hint #2: you'll need to use the `math` object for parts of this calculation!
 
@@ -175,8 +175,8 @@ function mortgageCalculatorComplete(P,I,N,T,S,H) {
     let hoaFees = H/12;    
     let monthlyRate = (principal * monthlyInterestRate) / (1 - (Math.pow((1 + monthlyInterestRate),periods * -1)));
     let totalMonthlyCost = monthlyRate + propTax + insurance + hoaFees;
-    console.log("Your monthly mortgage payment is " + monthlyRate.toFixed(2));
-    console.log("Your total monthly housing cost, including property tax, insurance and HOA fees, is " + totalMonthlyCost.toFixed(2));
+    console.log("Your monthly mortgage payment is $" + monthlyRate.toFixed(2));
+    console.log("Your total monthly housing cost, including property tax, insurance and HOA fees, is $" + totalMonthlyCost.toFixed(2));
     // return monthlyRate;
 }
 

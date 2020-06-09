@@ -140,8 +140,15 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-function variableInterestRate(P, I, N) {
-    let interest = I  - 0.025;
+function variableInterestRate(P, I, N, C) {
+    let interest;
+    if (C > 739) {
+        interest = I - 0.03;
+      } else if (C < 660) {
+        interest = I - 0.02;
+      } else {
+        interest = I - 0.025;
+      }
     let count = 0;
     for (let i = 0; i < 10; i++) {
         interest = interest + .005;
@@ -156,7 +163,7 @@ function variableInterestRate(P, I, N) {
   }
 }
 
-variableInterestRate(200000,0.04,30);
+variableInterestRate(200000,0.04,30,700); // Input -- P: principal, I: interest, N: years, C: credit score
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
@@ -164,9 +171,16 @@ variableInterestRate(200000,0.04,30);
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
 
-function mortgageCalculatorComplete(P,I,N,T,S,H) {
+function mortgageCalculatorComplete(P,I,N,C,T,S,H) {
     let principal = P;
-    let interest = I;
+    let interest;
+    if (C > 739) {
+        interest = I - 0.005;
+      } else if (C < 660) {
+        interest = I + 0.005;
+      } else {
+        interest = I;
+      }
     let years = N;
     let monthlyInterestRate = interest/12;
     let periods = years*12;
@@ -180,7 +194,7 @@ function mortgageCalculatorComplete(P,I,N,T,S,H) {
     // return monthlyRate;
 }
 
-mortgageCalculatorComplete(200000,0.05,30,1800,1200,2400);
+mortgageCalculatorComplete(200000,0.05,30,700,1800,1200,2400); /* Input -- P: principal, I: interest, N: years, C: credit score, T: property taxes (annually), S: homeowner's insurance (annually), H: HOA fees (anually) */
 
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */

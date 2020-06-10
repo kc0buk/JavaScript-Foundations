@@ -65,7 +65,7 @@ The completion of these questions is mandatory for MVP. However, passing the qui
 
 After you have completed the requirements, try any of the following challenges. As always, note that these may require additional research beyond what you learned in this module.
 
-- [ ] Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing
+- [x] Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing
 - [ ] Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford
 - [ ] Explore using `window.prompt()` to allow a user to input parameters in the browser
 - [ ] Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!)
@@ -74,7 +74,7 @@ After you have completed the requirements, try any of the following challenges. 
 
 Follow these steps for completing your project.
 
-1. [ ] Submit a pull request to merge `<firstName-lastName>` branch into master. **Please don't merge your own pull request**
+1. [x] Submit a pull request to merge `<firstName-lastName>` branch into master. **Please don't merge your own pull request** (https://github.com/kc0buk/JavaScript-Foundations/pull/1)
 2. [ ] Add your TL as a reviewer on the pull-request
 3. [ ] Your TL will count the project as complete by merging the branch back into master
 
